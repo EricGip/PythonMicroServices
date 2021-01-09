@@ -132,3 +132,7 @@ dmypy.json
 
 .dbdata/
 admin/.dbdata
+
+producer.py
+
+consumer.py
