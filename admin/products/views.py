@@ -13,9 +13,6 @@ class ProductViewSet(viewsets.ViewSet):
         products = Product.objects.all()
         # many = True tells it to return an array
         serializer = ProductSerializer(products, many = True)
-        ## 
-        publish()
-
         return Response(serializer.data)
     
     def create(self, request): #post/api/products
@@ -25,6 +22,9 @@ class ProductViewSet(viewsets.ViewSet):
         serializer.is_valid(raise_exception = True)
         # save into model
         serializer.save()
+
+        publish("product_created", serializer.data)
+
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     
@@ -37,7 +37,7 @@ class ProductViewSet(viewsets.ViewSet):
 
     def update(self, request, pk=None): #put /api/products/<str:id>
         # get item from object depending on key
-        product = Product.objects.get(id.pk)
+        product = Product.objects.get(id=pk)
 
         serializer = ProductSerializer(instance = product, data=request.data)
         
@@ -45,11 +45,17 @@ class ProductViewSet(viewsets.ViewSet):
         #save data 
         serializer.save()
         # return data or 202 status
+
+        publish("product_updated", serializer.data)
+
         return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
     def destroy(self, request, pk=None): #get /api/products/<str:id>
         product = Product.objects.get(id=pk)
         product.delete()
+
+        publish("product_deleted", pk)
+
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 

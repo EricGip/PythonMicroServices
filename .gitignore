@@ -136,3 +136,8 @@ admin/.dbdata
 producer.py
 
 consumer.py
+
+main.producer.py
+main.dbdata
+
+keys

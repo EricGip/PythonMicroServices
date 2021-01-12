@@ -11,6 +11,13 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv(usecwd=True))
+
+api_key = os.getenv("mqKey")
+
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'admin.settings')
 
 application = get_wsgi_application()

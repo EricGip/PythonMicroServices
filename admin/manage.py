@@ -2,7 +2,11 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from dotenv import load_dotenv, find_dotenv
 
+load_dotenv(find_dotenv(usecwd=True))
+
+api_key = os.getenv("mqKey")
 
 def main():
     """Run administrative tasks."""
