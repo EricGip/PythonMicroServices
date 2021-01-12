@@ -2,7 +2,9 @@
 
 ## Description
 
-All my previous projects have been monolithic. I wanted to gain experience in containerization and microservices to be able to take advantage of the different 
+All my previous projects have been monolithic and I wanted to gain experience in containerization and microservices. 
+
+This is just an example site, please do not enter information you don't want to be seen in public. 
 
 # 
 
