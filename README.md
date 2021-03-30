@@ -22,5 +22,6 @@ Docker is the same process as a fullstack app, just doing it inside a contianer 
 7. `docker-compose exec backend sh` again, migrate models into db.
 8. for django/backend framework, set up CRUD REST APIs //urls, views, serializer 
 9. repeat per app 
-10. use RabbitMQ to 
+10. use RabbitMQ to communicate between microservices, configure callback in the consumer.py and producer.py files and ensure data consistency between data bases.
+11. 
 
