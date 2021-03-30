@@ -1,7 +1,10 @@
 import React from "react";
+import Wrapper from "./Wrapper";
 
 const Products = () => {
   return (
+      <Wrapper>
+
       <div className="table-responsive">
         <table className="table table-striped table-sm">
           <thead>
@@ -17,14 +20,16 @@ const Products = () => {
             <tr>
               <td>1,001</td>
               <td>Lorem</td>
-              <td>ipsum</td>
-              <td>dolor</td>
-              <td>sit</td>
+              <td>Ipsum</td>
+              <td>1,001</td>
+              <td>1,001</td>
+              
             </tr>
           </tbody>
         </table>
       </div>
+      </Wrapper>
   );
-}
+};
 
 export default Products;
