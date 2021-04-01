@@ -3,28 +3,25 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Menu from "./components/Menu";
 import Products from "./admin/Products";
-import Main from "./main/main"
+import Main from "./main/main";
+import ProductsCreate from "./components/ProductsCreate";
+import ProductsUpdate from "./components/ProductsUpdate";
+
 
 import { BrowserRouter, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Nav />
 
-      <div className="container-fluid">
-        <div className="row">
-          <Menu />
-
-          <main role="main" className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <BrowserRouter>
-              <Route path="/" component={Main} />
-              <Route path="/admin/products" component={Products} />
+              <Route path="/" exact component={Main} />
+              <Route path="/admin/products" exact component={Products} />
+              <Route path="/admin/products/create" exact component={ProductsCreate} />
+              <Route path="/admin/products/:id/update" exact component={ProductsUpdate} />
+
             </BrowserRouter>
-          </main>
-          
-        </div>
-      </div>
+
     </div>
   );
 }
